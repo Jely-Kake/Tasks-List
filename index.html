@@ -97,8 +97,8 @@
               <div class="back">
                 <fieldset>
                   <legend>Tasks of the day:</legend>
-                </fieldset>
-                <div id="tasksop"></div>
+                  <div id="tasksop"></div>
+                </fieldset>           
                 <div class="actions">
                   <button id="save">
                     SAVE ✔
@@ -116,6 +116,7 @@
                   const save=document.getElementById("save");
                   const title=document.getElementById("title");
                   const tasksop=document.getElementById("tasksop");
+                  // const del=document.getElementById("delete");
                   
                   save.onclick=function(){
                     const key= title.value;
@@ -127,7 +128,13 @@
                       localStorage.setItem(key,value); 
                       location.reload();
                     }
+                    else {
+                      alert("Task can't be empty, please provide a non-empty input.")
+                    }
                   };
+                  // del.onclick=function(){
+                  //   localStorage.clear();
+                  // };
 
                   for(let i=0;i<localStorage.length;i++){
                     const key=localStorage.key(i);
